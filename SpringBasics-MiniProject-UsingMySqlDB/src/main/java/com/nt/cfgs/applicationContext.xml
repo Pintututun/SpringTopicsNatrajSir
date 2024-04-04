@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+      <!-- Configure DriverManagerDataSource as spring bean -->
+      <bean id="hkds" class="com.zaxxer.hikari.HikariDataSource">
+      <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="jdbcUrl" value="jdbc:mysql:///ntspbms716"/>
+      <property name="username" value="root"/>
+      <property name="password" value="Priyabrata"/>
+      <property name="minimumIdle" value="10"/>
+      <property name="maximumPoolSize" value="1000"/>
+      <property name="idleTimeout" value="30000"/>
+      </bean>
+      
+       <!-- Configure DriverManagerDataSource as spring bean-->
+      <!-- <bean id="hkds" class="com.zaxxer.hikari.HikariDataSource">
+      <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="jdbcUrl" value="jdbc:mysql:///ntspbms716"/>
+      <property name="username" value="root"/>
+      <property name="password" value="Priyabrata"/>
+      <property name="minimumIdle" value="10"/>
+      <property name="maximumPoolSize" value="1000"/>
+      <property name="idleTimeout" value="30000"/>
+      </bean> 
+       -->
+      <!-- Enable component scanning on the stereo type annotation spring beans -->
+      <context:component-scan base-package="com.nt"/>
+
+</beans>
