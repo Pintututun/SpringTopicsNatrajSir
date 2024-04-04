@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+      
+     <!-- Spring bean cfg by enabling static factory method based instantiation -->
+     <bean id="ldt" class="java.time.LocalDateTime" factory-method="now"/>
+     
+     <!-- Spring bean cfg by enabling 0-param constructor based instantiation -->
+     <bean id="dt" class="java.util.Date"/>
+     
+     <!-- Enable component scanning to recognize user-defined @Component classes as spring beans -->
+     <context:component-scan base-package="com.nt.sbeans"/>
+
+</beans>
